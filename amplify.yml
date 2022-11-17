@@ -1,19 +1,19 @@
 version: 1
 applications:
-  - appRoot: apps/nextproject
-    frontend:
+  - frontend:
       phases:
         build:
           commands:
             - nvm use $VERSION_NODE_16
-              - yarn install --frozen-lockfile
-              - yarn nx build nextproject
-              - cp yarn.lock apps/nextproject
-              - cd apps/nextproject
-              - yarn install --frozen-lockfile
+            - yarn install --frozen-lockfile
+            - yarn nx build admin
+            - cp yarn.lock apps/admin
+            - cd apps/admin
+            - yarn install --frozen-lockfile
       artifacts:
-        baseDirectory: ../../dist/apps/nextproject/.next
+        baseDirectory: ../../dist/apps/admin/.next
         files:
           - '**/*'
       cache:
         paths: []
+    appRoot: apps/nextproject
