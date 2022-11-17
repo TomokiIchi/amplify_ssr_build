@@ -6,12 +6,12 @@ applications:
           commands:
             - nvm use $VERSION_NODE_16
             - yarn install --frozen-lockfile
-            - yarn nx build admin
-            - cp yarn.lock apps/admin
-            - cd apps/admin
+            - yarn nx build nextproject
+            - cp yarn.lock apps/nextproject
+            - cd apps/nextproject
             - yarn install --frozen-lockfile
       artifacts:
-        baseDirectory: ../../dist/apps/admin/.next
+        baseDirectory: ../../dist/apps/nextproject/.next
         files:
           - '**/*'
       cache:
