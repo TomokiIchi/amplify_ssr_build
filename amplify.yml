@@ -5,6 +5,7 @@ applications:
         build:
           commands:
             - nvm use $VERSION_NODE_16
+            - cd ../../
             - yarn install --frozen-lockfile
             - yarn nx build nextproject
             - cp yarn.lock apps/nextproject
