@@ -1,13 +1,14 @@
 version: 1
 applications:
- - backend:
+  - appRoot: apps/nextproject
+    backend:
       phases:
         build:
           commands:
             - nvm use $VERSION_NODE_16
             - cd ../../
             - amplifyPush --simple
-  - frontend:
+    frontend:
       phases:
         build:
           commands:
@@ -24,4 +25,3 @@ applications:
           - '**/*'
       cache:
         paths: []
-    appRoot: apps/nextproject
